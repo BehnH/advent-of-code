@@ -39,15 +39,12 @@ func partOne(input string) int {
 		}
 
 		var numsArray []int
-		nums := strings.Split(line, " ")
-
-		for _, num := range nums {
+		for _, num := range strings.Split(line, " ") {
 			n, _ := strconv.Atoi(num)
 			numsArray = append(numsArray, n)
 		}
 
-		safe := isSafe(numsArray)
-		if safe {
+		if isSafe(numsArray) {
 			safeCount += 1
 		}
 	}
@@ -63,21 +60,15 @@ func partTwo(input string) int {
 		}
 
 		var numsArray []int
-		nums := strings.Split(line, " ")
-
-		for _, num := range nums {
+		for _, num := range strings.Split(line, " ") {
 			n, _ := strconv.Atoi(num)
 			numsArray = append(numsArray, n)
 		}
-
-		safe := isSafe(numsArray)
-		if safe {
+		
+		if isSafe(numsArray) {
 			safeCount += 1
-		}
-
-		if !safe {
-			removeSafe := checkRemovalSafe(numsArray)
-			if removeSafe {
+		} else {
+			if checkRemovalSafe(numsArray) {
 				safeCount += 1
 			}
 		}
