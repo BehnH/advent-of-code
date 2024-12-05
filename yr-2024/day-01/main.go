@@ -38,7 +38,7 @@ func partOne(input string) (int, []int, []int) {
 		if line == "" {
 			continue
 		}
-		split := strings.Split(line, "   ")
+		split := strings.Fields(line)
 		vA, _ := strconv.Atoi(split[0])
 		vB, _ := strconv.Atoi(split[1])
 
